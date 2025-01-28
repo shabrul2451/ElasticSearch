@@ -199,7 +199,7 @@ func main() {
 	}
 	log.Println("Fuzzy search result: ", toJson(*result))
 
-	// Example 5: Aggregation Search
+	// Example 6: Aggregation Search
 	aggs := map[string]interface{}{
 		"avg_price": map[string]interface{}{
 			"avg": map[string]interface{}{
@@ -218,6 +218,7 @@ func main() {
 	}
 	log.Println("Aggregation search result: ", toJson(*result))
 
+	// Example 7: Phrase Search
 	result, err = sc.PhraseSearch(ctx, "description", "gaming laptop", 1)
 	if err != nil {
 		log.Printf("Phrase search error: %v", err)
